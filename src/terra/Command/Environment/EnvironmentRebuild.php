@@ -1,9 +1,9 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Console\Input\InputOption;
-use terra\Command\Command;
+use aegir\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,7 +12,7 @@ use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Process\Process;
-use terra\Factory\EnvironmentFactory;
+use aegir\Factory\EnvironmentFactory;
 
 class EnvironmentRebuild extends Command
 {

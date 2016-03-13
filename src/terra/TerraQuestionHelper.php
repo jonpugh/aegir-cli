@@ -6,7 +6,7 @@
  * Credit to Platform.sh and platformsh-cli project.
  */
 
-namespace terra;
+namespace aegir;
 
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 
-class TerraQuestionHelper extends QuestionHelper
+class AegirQuestionHelper extends QuestionHelper
 {
     /**
      * {@inheritdoc}

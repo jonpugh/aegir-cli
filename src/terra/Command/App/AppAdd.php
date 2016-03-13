@@ -1,8 +1,8 @@
 <?php
 
-namespace terra\Command\App;
+namespace aegir\Command\App;
 
-use terra\Command\Command;
+use aegir\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -68,7 +68,7 @@ class AppAdd extends Command
         if ($host_default == '192.168.99.100') {
             $host_default = 'local.computer';
         }
-        $host_question = new Question('Host? Terra uses this to show links to your environments. It must resolve to the docker machine you are working with. [' . $host_default . '] ', $host_default);
+        $host_question = new Question('Host? Aegir uses this to show links to your environments. It must resolve to the docker machine you are working with. [' . $host_default . '] ', $host_default);
 
         // Prompts.
         $name = $this->getAnswer($input, $output, $name_question, 'name');
@@ -93,9 +93,9 @@ class AppAdd extends Command
             'repo' => $repo,
             'host' => $host
         );
-        $this->getApplication()->getTerra()->getConfig()->add('apps', $name, $app);
+        $this->getApplication()->getAegir()->getConfig()->add('apps', $name, $app);
 
-        if ($this->getApplication()->getTerra()->getConfig()->save()) {
+        if ($this->getApplication()->getAegir()->getConfig()->save()) {
             $output->writeln('<info>App saved</info>');
         } else {
             $output->writeln('<error>App not saved!</error>');

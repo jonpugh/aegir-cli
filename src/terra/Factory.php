@@ -1,6 +1,6 @@
 <?php
 
-namespace terra;
+namespace aegir;
 
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
@@ -12,14 +12,14 @@ use Symfony\Component\Yaml\Yaml;
 class Factory
 {
     /**
-     * Creates a Terra instance.
+     * Creates a Aegir instance.
      *
-     * @return Terra
+     * @return Aegir
      *               A configured Flo instance.
      */
-    private function createTerra()
+    private function createAegir()
     {
-        $terra = new Terra();
+        $terra = new Aegir();
       // Get config from env variables or files.
         if ($config_env = getenv('TERRA')) {
             $config_env = Yaml::parse($config_env);
@@ -51,15 +51,15 @@ class Factory
     }
 
     /**
-     * Creates a Terra instance.
+     * Creates a Aegir instance.
      *
-     * @return Terra
-     *               A configured Terra instance.
+     * @return Aegir
+     *               A configured Aegir instance.
      */
     public static function create()
     {
         $factory = new static();
 
-        return $factory->createTerra();
+        return $factory->createAegir();
     }
 }

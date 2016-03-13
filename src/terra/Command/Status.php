@@ -1,8 +1,8 @@
 <?php
 
-namespace terra\Command;
+namespace aegir\Command;
 
-use terra\Factory\EnvironmentFactory;
+use aegir\Factory\EnvironmentFactory;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -30,7 +30,7 @@ class Status extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello Terra!');
+        $output->writeln('Hello Aegir!');
 
         $app_name = $input->getArgument('app_name');
         $environment_name = $input->getArgument('environment_name');
@@ -57,7 +57,7 @@ class Status extends Command
     {
         // If no apps, trigger app:Add command.
         $helper = $this->getHelper('question');
-        $apps = $this->getApplication()->getTerra()->getConfig()->get('apps');
+        $apps = $this->getApplication()->getAegir()->getConfig()->get('apps');
         if (empty($apps)) {
             $output->writeln('You have no apps!');
             $question = new ConfirmationQuestion("Add an App? [y\N] ", false);
@@ -81,7 +81,7 @@ class Status extends Command
         $rows = array();
         $options = array();
         foreach ($this->getApplication()
-               ->getTerra()
+               ->getAegir()
                ->getConfig()
                ->get('apps') as $app) {
 
@@ -126,7 +126,7 @@ class Status extends Command
     {
         $output->writeln('<info>App:</info> ' . $input->getArgument('app_name'));
       // If there are no apps, return
-        if (count($this->getApplication()->getTerra()->getConfig()->get('apps')) == 0) {
+        if (count($this->getApplication()->getAegir()->getConfig()->get('apps')) == 0) {
             $output->writeln('<comment>There are no apps!</comment>');
             $output->writeln('Use the command <info>terra app:add</info> to add your first app.');
 
@@ -137,7 +137,7 @@ class Status extends Command
         '-' => '_',
         ));
 
-        $app = $this->getApplication()->getTerra()->getConfig()->get('apps', $app_name);
+        $app = $this->getApplication()->getAegir()->getConfig()->get('apps', $app_name);
 
         if (empty($app)) {
             $output->writeln('<error>No app with that name! </error>');
@@ -201,7 +201,7 @@ class Status extends Command
     {
 
         // If there are no apps, return
-        if (count($this->getApplication()->getTerra()->getConfig()->get('apps')) == 0) {
+        if (count($this->getApplication()->getAegir()->getConfig()->get('apps')) == 0) {
             $output->writeln('<comment>There are no apps!</comment>');
             $output->writeln('Use the command <info>terra app:add</info> to add your first app.');
 
@@ -211,7 +211,7 @@ class Status extends Command
         $app_name = $input->getArgument('app_name');
         $environment_name = $input->getArgument('environment_name');
 
-        $app = $this->getApplication()->getTerra()->getConfig()->get('apps', $app_name);
+        $app = $this->getApplication()->getAegir()->getConfig()->get('apps', $app_name);
 
         // If no environments:
         if (count(($app['environments'])) == 0) {

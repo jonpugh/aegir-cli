@@ -1,14 +1,14 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Question\ChoiceQuestion;
-use terra\Command\Command;
-use terra\Factory\EnvironmentFactory;
+use aegir\Command\Command;
+use aegir\Factory\EnvironmentFactory;
 
 class EnvironmentEnable extends Command
 {
@@ -57,8 +57,8 @@ class EnvironmentEnable extends Command
         $this->environment->name = $environment_name;
 
         // Save environment metadata.
-        $this->getApplication()->getTerra()->getConfig()->saveEnvironment($this->environment);
-        if ($this->getApplication()->getTerra()->getConfig()->save()) {
+        $this->getApplication()->getAegir()->getConfig()->saveEnvironment($this->environment);
+        if ($this->getApplication()->getAegir()->getConfig()->save()) {
             $output->writeln('<info>Environment enabled!</info>  Available at http://'.$environment_factory->getUrl().' and ' . $this->environment->url);
         } else {
             $output->writeln('<error>Environment info not saved.</error>');

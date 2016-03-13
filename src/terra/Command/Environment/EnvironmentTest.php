@@ -1,6 +1,6 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Console\Input\InputArgument;
@@ -16,8 +16,8 @@ use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Filesystem\Filesystem;
 
 
-use terra\Command\Command;
-use terra\Factory\EnvironmentFactory;
+use aegir\Command\Command;
+use aegir\Factory\EnvironmentFactory;
 
 class EnvironmentTest extends Command
 {
@@ -46,7 +46,7 @@ class EnvironmentTest extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello Terra!');
+        $output->writeln('Hello Aegir!');
 
         // Ask for an app and environment.
         $this->getApp($input, $output);

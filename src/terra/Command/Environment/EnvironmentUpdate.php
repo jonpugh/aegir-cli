@@ -1,6 +1,6 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use GitWrapper\GitWrapper;
 use Symfony\Component\Config\Definition\Exception\Exception;
@@ -17,8 +17,8 @@ use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Filesystem\Filesystem;
 
 
-use terra\Command\Command;
-use terra\Factory\EnvironmentFactory;
+use aegir\Command\Command;
+use aegir\Factory\EnvironmentFactory;
 
 class EnvironmentUpdate extends Command
 {
@@ -47,7 +47,7 @@ class EnvironmentUpdate extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello Terra!');
+        $output->writeln('Hello Aegir!');
         $helper = $this->getHelper('question');
 
         // Ask for an app and environment.
@@ -103,7 +103,7 @@ class EnvironmentUpdate extends Command
 
                 $wrapper->git('add -A', $path);
                 $git = $wrapper->workingCopy($path);
-                $git->commit('Terra Environment Update: ' . PHP_EOL . $drush_output);
+                $git->commit('Aegir Environment Update: ' . PHP_EOL . $drush_output);
                 $git->push('origin', $branch);
 
                 // @TODO: Offer to create a Pull Request!

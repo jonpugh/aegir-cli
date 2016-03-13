@@ -1,6 +1,6 @@
 <?php
 
-namespace terra\Console;
+namespace aegir\Console;
 
 use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\Console\Helper\DialogHelper;
@@ -16,10 +16,10 @@ use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
-use terra\Command;
-use terra\Factory;
-use terra\Terra;
-use terra\TerraQuestionHelper;
+use aegir\Command;
+use aegir\Factory;
+use aegir\Aegir;
+use aegir\AegirQuestionHelper;
 
 /**
  * Class Application.
@@ -27,7 +27,7 @@ use terra\TerraQuestionHelper;
 class Application extends BaseApplication
 {
     /**
-     * @var Terra
+     * @var Aegir
      */
     protected $terra;
 
@@ -42,11 +42,11 @@ class Application extends BaseApplication
      */
     public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN')
     {
-        parent::__construct('Terra', Terra::VERSION);
+        parent::__construct('Aegir', Aegir::VERSION);
     }
 
     /**
-     * Initializes all the Terra commands.
+     * Initializes all the Aegir commands.
      */
     protected function getDefaultCommands()
     {
@@ -103,7 +103,7 @@ class Application extends BaseApplication
           new TableHelper(),
           new DebugFormatterHelper(),
           new ProcessHelper(),
-          new TerraQuestionHelper(),
+          new AegirQuestionHelper(),
         ));
     }
 
@@ -162,12 +162,12 @@ class Application extends BaseApplication
     }
 
     /**
-     * Get a configured Terra object.
+     * Get a configured Aegir object.
      *
-     * @return Terra
-     *               A configured Terra object.
+     * @return Aegir
+     *               A configured Aegir object.
      */
-    public function getTerra()
+    public function getAegir()
     {
         if (null === $this->terra) {
             $this->terra = Factory::create();

@@ -1,9 +1,9 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Console\Input\InputOption;
-use terra\Command\Command;
+use aegir\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,7 +12,7 @@ use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
-use terra\Factory\EnvironmentFactory;
+use aegir\Factory\EnvironmentFactory;
 
 // ...
 
@@ -89,7 +89,7 @@ class EnvironmentAdd extends Command
         if (empty($path)) {
             // Load apps base path from Config.
             // @TODO: #110 Ask what they want their apps_basepath to be anc save it to the config.
-            $config_path = $this->getApplication()->getTerra()->getConfig()->get('apps_basepath');
+            $config_path = $this->getApplication()->getAegir()->getConfig()->get('apps_basepath');
 
             // If it already exists, use "realpath" to load it.
             if (file_exists($config_path)) {
@@ -156,8 +156,8 @@ class EnvironmentAdd extends Command
             $environment['version'] = $environmentFactory->getRepo()->getCurrentBranch();
 
             // Save to registry.
-            $this->getApplication()->getTerra()->getConfig()->saveEnvironment($environment);
-            $this->getApplication()->getTerra()->getConfig()->save();
+            $this->getApplication()->getAegir()->getConfig()->saveEnvironment($environment);
+            $this->getApplication()->getAegir()->getConfig()->save();
 
             $output->writeln('<info>Environment saved to registry.</info>');
         } else {

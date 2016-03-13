@@ -1,16 +1,16 @@
 <?php
 
-namespace terra;
+namespace aegir;
 
 /**
- * Class Terra.
+ * Class Aegir.
  */
-class Terra
+class Aegir
 {
     const VERSION = '0.x';
 
     /**
-     * Holds Terra configuration settings.
+     * Holds Aegir configuration settings.
      *
      * @var Config
      */

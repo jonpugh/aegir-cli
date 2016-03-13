@@ -1,10 +1,10 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Question\ChoiceQuestion;
-use terra\Command\Command;
+use aegir\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
-use terra\Factory\EnvironmentFactory;
+use aegir\Factory\EnvironmentFactory;
 
 // ...
 
@@ -136,8 +136,8 @@ class EnvironmentDomains extends Command
         }
 
         // Save the new version to the config.
-        $this->getApplication()->getTerra()->getConfig()->add('apps', array($this->app->name, 'environments', $this->environment->name), (array) $this->environment);
-        $this->getApplication()->getTerra()->getConfig()->save();
+        $this->getApplication()->getAegir()->getConfig()->add('apps', array($this->app->name, 'environments', $this->environment->name), (array) $this->environment);
+        $this->getApplication()->getAegir()->getConfig()->save();
         $output->writeln("<info>Domain added!</info> Changes won't take effect until the environment is restarted.");
         $output->writeln('');
     }
@@ -182,8 +182,8 @@ class EnvironmentDomains extends Command
         unset($this->environment->domains[$key]);
 
         // Save the new version to the config.
-        $this->getApplication()->getTerra()->getConfig()->add('apps', array($this->app->name, 'environments', $this->environment->name), (array) $this->environment);
-        $this->getApplication()->getTerra()->getConfig()->save();
+        $this->getApplication()->getAegir()->getConfig()->add('apps', array($this->app->name, 'environments', $this->environment->name), (array) $this->environment);
+        $this->getApplication()->getAegir()->getConfig()->save();
         $output->writeln("<info>Domain removed.</info> Changes won't take effect until the environment is restarted.");
         $output->writeln('');
     }

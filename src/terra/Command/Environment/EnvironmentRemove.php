@@ -1,9 +1,9 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Console\Input\InputOption;
-use terra\Command\Command;
+use aegir\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -11,7 +11,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
-use terra\Factory\EnvironmentFactory;
+use aegir\Factory\EnvironmentFactory;
 
 class EnvironmentRemove extends Command
 {
@@ -77,8 +77,8 @@ class EnvironmentRemove extends Command
             $environmentFactory->destroy();
 
             unset($this->app->environments[$environment_name]);
-            $this->getApplication()->getTerra()->getConfig()->add('apps', $app_name, (array) $this->app);
-            $this->getApplication()->getTerra()->getConfig()->save();
+            $this->getApplication()->getAegir()->getConfig()->add('apps', $app_name, (array) $this->app);
+            $this->getApplication()->getAegir()->getConfig()->save();
 
             $output->writeln("<info>Environment $app_name:$environment_name has been removed.</info>");
         }

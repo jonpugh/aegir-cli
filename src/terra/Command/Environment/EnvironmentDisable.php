@@ -1,14 +1,14 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Question\ChoiceQuestion;
-use terra\Command\Command;
-use terra\Factory\EnvironmentFactory;
+use aegir\Command\Command;
+use aegir\Factory\EnvironmentFactory;
 
 class EnvironmentDisable extends Command
 {

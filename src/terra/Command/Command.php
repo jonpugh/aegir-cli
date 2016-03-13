@@ -1,6 +1,6 @@
 <?php
 
-namespace terra\Command;
+namespace aegir\Command;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -8,7 +8,7 @@ use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 use Symfony\Component\Console\Command\Command as CommandBase;
 
-use terra\Factory\EnvironmentFactory;
+use aegir\Factory\EnvironmentFactory;
 
 /**
  * Class Command.
@@ -65,7 +65,7 @@ class Command extends CommandBase
     /**
      * Gets the application instance for this command.
      *
-     * @return \terra\Console\Application
+     * @return \aegir\Console\Application
      *
      * @api
      */
@@ -81,7 +81,7 @@ class Command extends CommandBase
     {
 
         // If there are no apps, end command.
-        if (count($this->getApplication()->getTerra()->getConfig()->get('apps')) == 0) {
+        if (count($this->getApplication()->getAegir()->getConfig()->get('apps')) == 0) {
             throw new \Exception('There are no apps to remove!. Use the command <info>terra app:add</info> to add your first app.');
         }
 
@@ -90,7 +90,7 @@ class Command extends CommandBase
 
         // If no name specified provide options
         if (empty($app_name)) {
-          $applications = array_flip(array_keys($this->getApplication()->getTerra()->getConfig()->get('apps')));
+          $applications = array_flip(array_keys($this->getApplication()->getAegir()->getConfig()->get('apps')));
           foreach (array_keys($applications) as $app_key) {
               $applications[$app_key] = $app_key;
             }
@@ -109,7 +109,7 @@ class Command extends CommandBase
         }
         else {
             // Set the app for this command.
-            $this->app = (object) $this->getApplication()->getTerra()->getConfig()->get('apps', $app_name);
+            $this->app = (object) $this->getApplication()->getAegir()->getConfig()->get('apps', $app_name);
         }
     }
 
@@ -155,7 +155,7 @@ class Command extends CommandBase
     /**
      * Get an environmentFactory class
      *
-     * @return \terra\Factory\EnvironmentFactory
+     * @return \aegir\Factory\EnvironmentFactory
      *
      * @api
      */

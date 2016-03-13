@@ -1,12 +1,12 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Process\Process;
-use terra\Command\Command;
+use aegir\Command\Command;
 
 class EnvironmentProxyEnable extends Command
 {
@@ -20,7 +20,7 @@ class EnvironmentProxyEnable extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello Terra!');
+        $output->writeln('Hello Aegir!');
         $cmd = 'docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy';
 
         // Confirm removal of the app.

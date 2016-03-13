@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Terra Install Script for UBUNTU
+# Aegir Install Script for UBUNTU
 # WORK IN PROGRESS!
 # This script is based on the Install Instructions for terra.
 
@@ -25,7 +25,7 @@ cd /usr/share/drush
 composer install
 ln -s /usr/share/drush/drush /usr/local/bin/drush
 
-# Install Terra Manually
+# Install Aegir Manually
 git clone https://github.com/terra-ops/terra-cli.git /usr/share/terra
 cd /usr/share/terra
 composer install
@@ -38,7 +38,7 @@ chmod 600 ~/.ssh/config
 
 # Notify User
 echo "==========================================================="
-echo " Terra has been installed! "
+echo " Aegir has been installed! "
 echo " You should add the user you will use terra with to the docker group."
 echo " Run the following command:"
 

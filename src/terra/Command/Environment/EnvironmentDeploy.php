@@ -1,14 +1,14 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
-use terra\Command\Command;
+use aegir\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
-use terra\Factory\EnvironmentFactory;
+use aegir\Factory\EnvironmentFactory;
 
 class EnvironmentDeploy extends Command
 {
@@ -63,7 +63,7 @@ class EnvironmentDeploy extends Command
         $this->environment->version = $environment->deploy($git_ref);
 
         // Save the new version to the config.
-        $this->getApplication()->getTerra()->getConfig()->add('apps', array($this->app->name, 'environments', $this->environment->name), (array) $this->environment);
-        $this->getApplication()->getTerra()->getConfig()->save();
+        $this->getApplication()->getAegir()->getConfig()->add('apps', array($this->app->name, 'environments', $this->environment->name), (array) $this->environment);
+        $this->getApplication()->getAegir()->getConfig()->save();
     }
 }

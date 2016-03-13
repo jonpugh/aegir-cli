@@ -1,8 +1,8 @@
 <?php
 
-namespace terra\Command;
+namespace aegir\Command;
 
-use terra\Factory\EnvironmentFactory;
+use aegir\Factory\EnvironmentFactory;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

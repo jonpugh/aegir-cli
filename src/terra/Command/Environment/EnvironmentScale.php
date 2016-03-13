@@ -1,14 +1,14 @@
 <?php
 
-namespace terra\Command\Environment;
+namespace aegir\Command\Environment;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Question\ChoiceQuestion;
-use terra\Command\Command;
-use terra\Factory\EnvironmentFactory;
+use aegir\Command\Command;
+use aegir\Factory\EnvironmentFactory;
 
 class EnvironmentScale extends Command
 {
@@ -37,7 +37,7 @@ class EnvironmentScale extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello Terra!');
+        $output->writeln('Hello Aegir!');
 
         // Ask for an app and environment.
         $this->getApp($input, $output);

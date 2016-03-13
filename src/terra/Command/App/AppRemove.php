@@ -1,8 +1,8 @@
 <?php
 
-namespace terra\Command\App;
+namespace aegir\Command\App;
 
-use terra\Command\Command;
+use aegir\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -42,8 +42,8 @@ class AppRemove extends Command
 
             return;
         } else {
-            $this->getApplication()->getTerra()->getConfig()->remove('apps', $name);
-            $this->getApplication()->getTerra()->getConfig()->save();
+            $this->getApplication()->getAegir()->getConfig()->remove('apps', $name);
+            $this->getApplication()->getAegir()->getConfig()->save();
             $output->writeln("<info>App $name has been removed.</info>");
 
             // @TODO: Remove all environments and files associated with this app.
