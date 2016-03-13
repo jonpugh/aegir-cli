@@ -5,7 +5,7 @@ namespace aegir;
 /**
  * Class Aegir.
  */
-class Aegir
+class AegirCli
 {
     const VERSION = '0.x';
 

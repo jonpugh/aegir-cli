@@ -14,12 +14,12 @@ class Factory
     /**
      * Creates a Aegir instance.
      *
-     * @return Aegir
+     * @return AegirCli
      *               A configured Flo instance.
      */
     private function createAegir()
     {
-        $terra = new Aegir();
+        $terra = new AegirCli();
       // Get config from env variables or files.
         if ($config_env = getenv('TERRA')) {
             $config_env = Yaml::parse($config_env);
@@ -53,7 +53,7 @@ class Factory
     /**
      * Creates a Aegir instance.
      *
-     * @return Aegir
+     * @return AegirCli
      *               A configured Aegir instance.
      */
     public static function create()

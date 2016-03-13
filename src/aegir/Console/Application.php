@@ -18,7 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 use aegir\Command;
 use aegir\Factory;
-use aegir\Aegir;
+use aegir\AegirCli;
 use aegir\AegirQuestionHelper;
 
 /**
@@ -27,7 +27,7 @@ use aegir\AegirQuestionHelper;
 class Application extends BaseApplication
 {
     /**
-     * @var Aegir
+     * @var AegirCli
      */
     protected $terra;
 
@@ -42,7 +42,7 @@ class Application extends BaseApplication
      */
     public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN')
     {
-        parent::__construct('Aegir', Aegir::VERSION);
+        parent::__construct('Aegir', AegirCli::VERSION);
     }
 
     /**
@@ -164,7 +164,7 @@ class Application extends BaseApplication
     /**
      * Get a configured Aegir object.
      *
-     * @return Aegir
+     * @return AegirCli
      *               A configured Aegir object.
      */
     public function getAegir()
