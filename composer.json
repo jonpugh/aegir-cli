@@ -26,7 +26,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "terra\\": "src/aegir/" }
+        "psr-4": { "aegir\\": "src/aegir/" }
     },
     "bin": [
         "bin/aegir"
