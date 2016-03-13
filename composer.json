@@ -1,6 +1,6 @@
 {
-    "name": "terra/cli",
-    "description": "Terra Command Line Interface",
+    "name": "aegir/cli",
+    "description": "Aegir Command Line Interface",
     "type": "project",
     "license": "GPL-2.0",
     "require": {
@@ -18,22 +18,17 @@
     "authors": [
         {
             "name": "Jon Pugh",
-            "email": "jon@thinkdrop.net"
+            "email": "jon@opendevshop.com"
         },
         {
-          "name":      "Terra Contributors",
-          "homepage":  "https://github.com/terra-ops/terra-cli/graphs/contributors"
+          "name":      "Aegir Contributors",
+          "homepage":  "https://github.com/aegir-project"
         }
     ],
-    "support": {
-      "issues": "https://github.com/terra-ops/terra-cli/issues",
-      "docs": "http://terra.readthedocs.org",
-      "forum": "https://gitter.im/terra-ops/terra-cli"
-    },
     "autoload": {
-        "psr-4": { "terra\\": "src/terra/" }
+        "psr-4": { "terra\\": "src/aegir/" }
     },
     "bin": [
-        "bin/terra"
+        "bin/aegir"
     ]
 }
