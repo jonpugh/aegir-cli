@@ -49,14 +49,17 @@ class Application extends BaseApplication
     protected $process = null;
 
     /**
-     * {@inheritdoc}
+     * Create a new application.
+     *
+     * @param $container
      */
-    public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN')
+    public function __construct($container)
     {
-        parent::__construct('Aegir', AegirCli::VERSION);
+        $this->container = $container;
+        parent::__construct($this::NAME, $this::VERSION);
     }
 
-    /**
+        /**
      * Initializes all the Aegir commands.
      */
     protected function getDefaultCommands()
