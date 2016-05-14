@@ -1,6 +1,6 @@
 <?php
 
-namespace aegir\Console;
+namespace Aegir\Console;
 
 use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\Console\Helper\DialogHelper;
@@ -26,6 +26,17 @@ use aegir\AegirQuestionHelper;
  */
 class Application extends BaseApplication
 {
+
+    /**
+     * @var string
+     */
+    const NAME = 'Aegir Console';
+
+    /**
+     * @var string
+     */
+    const VERSION = '1.x';
+
     /**
      * @var AegirCli
      */
