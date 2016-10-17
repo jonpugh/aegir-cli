@@ -1,6 +1,6 @@
 <?php
 
-namespace Aegir\Console;
+namespace aegir;
 
 use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\Console\Helper\DialogHelper;
